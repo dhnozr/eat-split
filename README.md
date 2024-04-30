@@ -1,4 +1,6 @@
 # Bill Splitting App
+![Ekran görüntüsü 2024-04-30 154459](https://github.com/dhnozr/eat-split/assets/115792609/e03e61a0-8ed2-4dee-a2b5-1dc2353886b8)
+
 
 This is a simple React application designed for managing debts between friends. You can easily add friends, track how much you owe each other, and split bills directly from the UI.
 
