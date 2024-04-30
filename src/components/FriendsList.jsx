@@ -8,11 +8,12 @@ const FriendsList = ({ children }) => {
 export default FriendsList;
 
 // tek friend renderlemak icin
-export const Friend = ({ friend }) => {
+export const Friend = ({ friend, handleSelectedFriend, selectedFriend }) => {
+  const isSelected = friend.id === selectedFriend?.id;
   return (
     <>
       {friend.map(friend => (
-        <li key={friend.id}>
+        <li key={friend.id} className={isSelected ? 'selected' : ''}>
           <img src={friend.image} alt={friend.name} />
           <h3>{friend.name}</h3>
 
@@ -27,7 +28,7 @@ export const Friend = ({ friend }) => {
           ) : (
             <p>You and {friend.name} are even</p>
           )}
-          <Button>Select</Button>
+          <Button onClick={() => handleSelectedFriend(friend)}>{isSelected ? 'Close' : 'Select'}</Button>
         </li>
       ))}
     </>
