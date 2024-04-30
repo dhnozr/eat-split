@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 const FriendsList = ({ children }) => {
   return <ul>{children}</ul>;
@@ -26,7 +27,7 @@ export const Friend = ({ friend }) => {
           ) : (
             <p>You and {friend.name} are even</p>
           )}
-          <button className='button'>Select</button>
+          <Button>Select</Button>
         </li>
       ))}
     </>
