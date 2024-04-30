@@ -2,6 +2,9 @@ import { useState } from 'react';
 
 import './App.css';
 import FriendsList, { Friend } from './components/FriendsList';
+import AddFriendForm from './components/AddFriendForm';
+import Button from './components/Button';
+import FormSplitBill from './components/FormSplitBill';
 
 const initialFriends = [
   {
@@ -26,6 +29,11 @@ const initialFriends = [
 ];
 
 function App() {
+  const [showAddFriend, setShowAddFriend] = useState(false);
+
+  const handleShowAddFriend = () => {
+    setShowAddFriend(prev => !prev);
+  };
   return (
     <>
       <div className='app'>
@@ -33,7 +41,10 @@ function App() {
           <FriendsList>
             <Friend friend={initialFriends} />
           </FriendsList>
+          {showAddFriend && <AddFriendForm />}
+          <Button onClick={handleShowAddFriend}>{showAddFriend ? 'Close' : 'Add Friend'}</Button>
         </div>
+        <FormSplitBill />
       </div>
     </>
   );
